@@ -1,0 +1,34 @@
+{
+  "name": "ng2-go-top-button",
+  "version": "0.0.1",
+  "description": "LocalStorageService for Angular 2 with mostly the same API (and most of the code) from angular-local-storage",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "author": "Anna Pohorielova <anya.pogorelova@gmail.com>",
+  "scripts": {
+    "prepublish": "tsc"
+  },
+  "contributors": [
+    {
+      "name": "Anna Pohorielova",
+      "email": "anya.pogorelova@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/annapogorelova/ng2-go-top-button.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@angular/common": "^2.4.8",
+    "@angular/compiler": "^2.4.8",
+    "@angular/compiler-cli": "^2.4.8",
+    "@angular/core": "^2.4.8",
+    "@angular/platform-browser": "^2.4.8",
+    "@types/core-js": "^0.9.35",
+    "@types/node": "^7.0.5",
+    "rxjs": "^5.0.1",
+    "typescript": "^2.2.1",
+    "zone.js": "^0.7.2"
+  }
+}

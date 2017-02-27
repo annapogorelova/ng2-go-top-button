@@ -1,0 +1,11 @@
+.go-top-button {
+    position: fixed;
+    cursor: pointer;
+    outline: none;
+}
+
+.go-top-button:hover, .go-top-button:focus {
+    background-color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+    color: white;
+}
