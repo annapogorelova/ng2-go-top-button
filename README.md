@@ -56,4 +56,4 @@ Example of customization:
 ```
 Result:
 
-![alt tag](https://psv4.userapi.com/c812433/u84916949/docs/f9e50f1bf3fd/bears_scrolling.gif?extra=5mh6Tr1Ejf7XrR8afCqfPKQLpG9xyGk4WRynKShAQrQf9FXZilGoWLFC2FhARauRIlcU7stcWfzw2fBc9tWWe4yG5wqg93EwTKFRCSm1rudtk0feNkZ7EjY)
+![alt tag](https://psv4.userapi.com/c812433/u84916949/docs/f9e50f1bf3fd/bears_scrolling.gif)
