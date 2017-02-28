@@ -3,7 +3,7 @@ import {Component, HostListener, Input, trigger, state, style, transition, anima
 @Component({
     selector: 'go-top-button',
     templateUrl: './go-top-button.component.html',
-    styleUrls: ['./go-top-button.component.css'],
+    styles: [require('./go-top-button.component.css').toString()],
     animations: [
         trigger('appearInOut', [
             state('in', style({
