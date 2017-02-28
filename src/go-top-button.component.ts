@@ -109,14 +109,6 @@ export class GoTopButton {
     };
 
     getStyle = () => {
-        var defaults = {};
-        for(var prop in this.defaultStyles){
-            defaults[prop]=this.defaultStyles[prop];
-        }
-
-        for(var prop in this.styles){
-            defaults[prop] = this.styles[prop];
-        }
-        return defaults;
+        return Object.assign({}, this.defaultStyles, this.styles);
     };
 }
