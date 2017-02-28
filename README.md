@@ -56,4 +56,4 @@ Example of customization:
 ```
 Result:
 
-![alt tag](https://psv4.userapi.com/c812433/u84916949/docs/f9e50f1bf3fd/bears_scrolling.gif)
+![alt tag](https://gifyu.com/images/bears_scrolling.gif)
