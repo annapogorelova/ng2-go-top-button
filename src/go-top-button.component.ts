@@ -19,6 +19,10 @@ import {Component, HostListener, Input, trigger, state, style, transition, anima
         ]),
     ],
 })
+
+/**
+ * Component for adding a go-to-top button to scrollable browser content
+ */
 export class GoTopButton {
     private animationState: string = 'out';
 
@@ -56,7 +60,7 @@ export class GoTopButton {
      * Go top button will appear when user scrolls Y to this position
      * @type {number}
      */
-    @Input() scrollYDistance: number = 200;
+    @Input() scrollDistance: number = 200;
 
     /**
      * Button inner html
@@ -82,12 +86,38 @@ export class GoTopButton {
     @Input() speed: number = 80;
 
     /**
+     * Acceleration coefficient, added to speed when using animated scroll
+     * @type {number}
+     */
+    @Input() acceleration: number = 0;
+
+    ngOnInit(){
+        this.validateInputs();
+    }
+
+    private validateInputs =() => {
+        var errorMessagePrefix = 'GoTopButton component input validation error: ';
+
+        if(this.scrollDistance < 0){
+            throw Error(errorMessagePrefix + "'scrollDistance' parameter must be greater or equal to 0");
+        }
+
+        if(this.speed < 1){
+            throw Error(errorMessagePrefix + "'speed' parameter must be a positive number");
+        }
+
+        if(this.acceleration < 0){
+            throw Error(errorMessagePrefix + "'acceleration' parameter must be greater or equal to 0");
+        }
+    };
+
+    /**
      * Listens to window scroll and animates the button
      */
     @HostListener('window:scroll', [])
     onWindowScroll = () => {
         var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-        this.animationState = currentScrollTop > this.scrollYDistance ? 'in' : 'out';
+        this.animationState = currentScrollTop > this.scrollDistance ? 'in' : 'out';
     };
 
     /**
@@ -96,13 +126,14 @@ export class GoTopButton {
      */
     scrollTop = (event: any) => {
         event.preventDefault();
+        var initialSpeed = this.speed;
         if (this.animate) {
-            var timerID = setInterval(function () {
-                window.scrollBy(0, -this.speed);
-
+            var timerID = setInterval(() => {
+                window.scrollBy(0, -initialSpeed);
+                initialSpeed = initialSpeed + this.acceleration;
                 if (window.scrollY == 0)
                     clearInterval(timerID);
-            }.bind(this), 15);
+            }, 15);
         } else {
             window.scrollTo(0, 0);
         }
