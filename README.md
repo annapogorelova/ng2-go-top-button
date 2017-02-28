@@ -54,6 +54,3 @@ Example of customization:
                  }">
   </go-top-button>
 ```
-Result:
-
-![alt tag](https://gifyu.com/images/bears_scrolling.gif)
