@@ -25,18 +25,18 @@ Add it to imports in your module declaration:
 ```
 @NgModule({
     ...
-    imports: [BrowserModule, FormsModule, GoTopButtonModule],
+    imports: [..., GoTopButtonModule],
     ...
 ```
 If you need to export it from your module, than also add it to exports:
 ```
 @NgModule({
     ...
-    exports: [GoTopButtonModule]
+    exports: [..., GoTopButtonModule]
     ...
 ```
 
-On your template paste the `<go-top-button></go-top-button>` html. This will add a simple button with default styles and without animated scroll.
+On your template paste the `<go-top-button></go-top-button>` html. This will add a simple button with default styles and without animated scroll. By default go-top-button will appear on the right side, 50% top and bottom and without any icons or text.
 
 Example of customization:
 ```
