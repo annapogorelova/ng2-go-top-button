@@ -36,7 +36,7 @@ If you need to export it from your module, than also add it to exports:
     ...
 ```
 
-On your template paste the `<go-top-button></go-top-button>` html. This will add a simple button with default styles and without animated scroll. By default go-top-button will appear on the right side, 50% top and bottom and without any icons or text.
+On your template paste the `<go-top-button></go-top-button>` html. This will add a simple button with default styles and without animated scroll. By default go-top-button will appear on the right side, 50% top and bottom and without any icons or text. You can then customize its styles and behaviour.
 
 Example of customization:
 ```
@@ -55,4 +55,5 @@ Example of customization:
   </go-top-button>
 ```
 Result:
+
 ![alt tag](https://gifyu.com/images/ezgif.com-video-to-gifface4.gif)
