@@ -3,7 +3,19 @@ import {Component, HostListener, Input, trigger, state, style, transition, anima
 @Component({
     selector: 'go-top-button',
     templateUrl: './go-top-button.component.html',
-    styles: [require('./go-top-button.component.css').toString()],
+    styles: [
+        `.go-top-button {
+            position: fixed;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .go-top-button:hover, .go-top-button:focus {
+            background-color: rgba(0, 0, 0, 0.6);
+            text-decoration: none;
+            color: white;
+        }`
+    ],
     animations: [
         trigger('appearInOut', [
             state('in', style({
