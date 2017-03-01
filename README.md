@@ -54,3 +54,5 @@ Example of customization:
                  }">
   </go-top-button>
 ```
+Result:
+![alt tag](https://gifyu.com/images/ezgif.com-video-to-gifface4.gif)
