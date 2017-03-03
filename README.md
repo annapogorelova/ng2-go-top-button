@@ -48,7 +48,7 @@ Example of customization:
                  [styles]="{
                     'border-radius': '20px 20px 20px 20px',
                     'right': '5px',
-                    'color': 'blue',
+                    'color': 'green',
                     'border': '5px solid',
                     'line-height': '20px'
                  }">
