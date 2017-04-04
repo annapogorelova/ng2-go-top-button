@@ -128,8 +128,7 @@ export class GoTopButton {
      */
     @HostListener('window:scroll', [])
     onWindowScroll = () => {
-        var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-        this.animationState = currentScrollTop > this.scrollDistance ? 'in' : 'out';
+        this.animationState = this.getCurrentScrollTop() > this.scrollDistance ? 'in' : 'out';
     };
 
     /**
@@ -143,7 +142,7 @@ export class GoTopButton {
             var timerID = setInterval(() => {
                 window.scrollBy(0, -initialSpeed);
                 initialSpeed = initialSpeed + this.acceleration;
-                if (window.scrollY == 0)
+                if (this.getCurrentScrollTop() == 0)
                     clearInterval(timerID);
             }, 15);
         } else {
@@ -151,6 +150,19 @@ export class GoTopButton {
         }
     };
 
+    /**
+     * Get current Y scroll position
+     * @returns {any|((event:any)=>undefined)}
+     */
+    getCurrentScrollTop = () => {
+        var currentScrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+        return currentScrollTop
+    };
+
+    /**
+     * Get button style
+     * @returns {{}&U&V}
+     */
     getStyle = () => {
         return Object.assign({}, this.defaultStyles, this.styles);
     };
