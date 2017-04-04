@@ -1,4 +1,5 @@
-import {Component, HostListener, Input, trigger, state, style, transition, animate} from '@angular/core';
+import {Component, HostListener, Input} from '@angular/core';
+import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
     selector: 'go-top-button',
