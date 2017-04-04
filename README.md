@@ -38,7 +38,7 @@ If you need to export it from your module, than also add it to exports:
 
 IE-specific issues:
 
-IE does not supports web animations. If you would like to enable them, install and import the corresponding polyfill to your polyfills.js file:
+IE does not support web animations. If you would like to enable them, install and import the corresponding polyfill to your polyfills.js file:
 
 In your project's directory:
 ```
