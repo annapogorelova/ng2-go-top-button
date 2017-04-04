@@ -42,7 +42,7 @@ IE does not support web animations. If you would like to enable them, install an
 
 In your project's directory:
 ```
-npm install --save web-animations-js`
+npm install --save web-animations-js
 ```
 
 In polyfills.js:
