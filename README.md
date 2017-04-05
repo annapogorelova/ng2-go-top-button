@@ -36,20 +36,6 @@ If you need to export it from your module, than also add it to exports:
     ...
 ```
 
-# IE-specific issues:
-
-IE does not support web animations. If you would like to enable them, install and import the corresponding polyfill to your polyfills.js file:
-
-In your project's directory:
-```
-npm install --save web-animations-js
-```
-
-In polyfills.js:
-```
-import 'web-animations-js';
-```
-
 On your template paste the `<go-top-button></go-top-button>` html. This will add a simple button with default styles and without animated scroll. By default go-top-button will appear on the right side, 50% top and bottom and without any icons or text. You can then customize its styles and behaviour.
 
 Example of customization:
@@ -68,6 +54,19 @@ Example of customization:
                  }">
   </go-top-button>
 ```
-Result:
+# IE-specific issues:
+
+IE does not support web animations. If you would like to enable them, install and import the corresponding polyfill to your polyfills.js file:
+
+In your project's directory:
+```
+npm install --save web-animations-js
+```
+
+In polyfills.js:
+```
+import 'web-animations-js';
+```
+# Result:
 
 ![alt tag](https://gifyu.com/images/ezgif.com-video-to-gifface4.gif)
