@@ -20,14 +20,16 @@ npm install ng2-go-top-button --save
 Import statement:
 ```
 import {GoTopButtonModule} from 'ng2-go-top-button';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; // angular 4.x and greater
 ```
-Add it to imports in your module declaration:
+Add it to imports in your module declaration. When using angular 4.x and greater, import a `BrowserAnimationsModule`:
 ```
 @NgModule({
     ...
-    imports: [..., GoTopButtonModule],
+    imports: [..., GoTopButtonModule, BrowserAnimationsModule],
     ...
 ```
+
 If you need to export it from your module, than also add it to exports:
 ```
 @NgModule({
