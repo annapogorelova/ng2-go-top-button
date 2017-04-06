@@ -1,4 +1,4 @@
-import {Component, HostListener, Input} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
@@ -36,7 +36,7 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
 /**
  * Component for adding a go-to-top button to scrollable browser content
  */
-export class GoTopButton {
+export class GoTopButton implements OnInit {
     private animationState: string = 'out';
 
     /**
@@ -129,7 +129,9 @@ export class GoTopButton {
      */
     @HostListener('window:scroll', [])
     onWindowScroll = () => {
-        this.animationState = this.getCurrentScrollTop() > this.scrollDistance ? 'in' : 'out';
+        if(this.isBrowser()){
+            this.animationState = this.getCurrentScrollTop() > this.scrollDistance ? 'in' : 'out';
+        }
     };
 
     /**
@@ -137,18 +139,29 @@ export class GoTopButton {
      * @param event
      */
     scrollTop = (event: any) => {
+        if(!this.isBrowser()){
+            return;
+        }
+
         event.preventDefault();
-        var initialSpeed = this.speed;
         if (this.animate) {
-            var timerID = setInterval(() => {
-                window.scrollBy(0, -initialSpeed);
-                initialSpeed = initialSpeed + this.acceleration;
-                if (this.getCurrentScrollTop() == 0)
-                    clearInterval(timerID);
-            }, 15);
+            this.animateScrollTop();
         } else {
             window.scrollTo(0, 0);
         }
+    };
+
+    /**
+     * Performs the animated scroll to top
+     */
+    animateScrollTop = () => {
+        var initialSpeed = this.speed;
+        var timerID = setInterval(() => {
+            window.scrollBy(0, -initialSpeed);
+            initialSpeed = initialSpeed + this.acceleration;
+            if (this.getCurrentScrollTop() == 0)
+                clearInterval(timerID);
+        }, 15);
     };
 
     /**
@@ -156,8 +169,7 @@ export class GoTopButton {
      * @returns {any|((event:any)=>undefined)}
      */
     getCurrentScrollTop = () => {
-        var currentScrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
-        return currentScrollTop
+        return window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
     };
 
     /**
@@ -166,5 +178,14 @@ export class GoTopButton {
      */
     getStyle = () => {
         return Object.assign({}, this.defaultStyles, this.styles);
+    };
+
+    /**
+     * This check will prevent 'window' logic to be executed
+     * while executing the server rendering
+     * @returns {boolean}
+     */
+    isBrowser = ():boolean => {
+        return typeof (window) !== 'undefined';
     };
 }
