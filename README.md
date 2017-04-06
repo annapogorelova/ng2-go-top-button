@@ -22,7 +22,7 @@ Import statement:
 import {GoTopButtonModule} from 'ng2-go-top-button';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; // angular 4.x and greater
 ```
-Add it to imports in your module declaration. When using angular 4.x and greater, import a `BrowserAnimationsModule`:
+Add it to imports in your module declaration. When using angular 4.x and greater, also import a `BrowserAnimationsModule`:
 ```
 @NgModule({
     ...
