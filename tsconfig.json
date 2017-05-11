@@ -6,11 +6,18 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "removeComments": true,
-    "sourceMap": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
     "declaration": true
   },
   "exclude": [
     "node_modules"
+  ],
+
+  "files": [
+    "index.ts",
+    "./src/go-top-button.component.ts",
+    "./src/go-top-button.module.ts"
   ],
 
   "angularCompilerOptions": {
