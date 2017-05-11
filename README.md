@@ -8,7 +8,7 @@ npm install ng2-go-top-button --save
 
 # Configuration
 
-# SystemJS
+### SystemJS
 
 Register @angular/animations and the package itself in systemjs.config.js as following:
 ```
