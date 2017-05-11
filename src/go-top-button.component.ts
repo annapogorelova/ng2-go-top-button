@@ -3,7 +3,13 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
     selector: 'go-top-button',
-    templateUrl: './go-top-button.component.html',
+    template: `<button type="button" class="go-top-button"
+                        [@appearInOut]="animationState"
+                        (click)="scrollTop($event)"
+                        [ngStyle]="getStyle()">
+                    <span *ngIf="html" [innerHTML]="html">
+                    </span>
+                </button>`,
     styles: [
         `.go-top-button {
             position: fixed;
