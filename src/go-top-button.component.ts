@@ -175,7 +175,23 @@ export class GoTopButton implements OnInit {
      * @returns {any|((event:any)=>undefined)}
      */
     getCurrentScrollTop = () => {
-        return window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+        if(typeof window.scrollY != 'undefined'){
+            return window.scrollY;
+        }
+
+        if(typeof window.pageYOffset != 'undefined'){
+            return window.pageYOffset;
+        }
+
+        if(typeof document.body.scrollTop != 'undefined'){
+            return document.body.scrollTop;
+        }
+
+        if(typeof document.documentElement.scrollTop != 'undefined'){
+            return document.documentElement.scrollTop;
+        }
+
+        return 0;
     };
 
     /**
