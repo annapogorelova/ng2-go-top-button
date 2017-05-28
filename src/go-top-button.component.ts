@@ -43,7 +43,7 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
  * Component for adding a go-to-top button to scrollable browser content
  */
 export class GoTopButton implements OnInit {
-    private animationState: string = 'out';
+    animationState: string = 'out';
 
     /**
      * Default button styles
