@@ -7,7 +7,7 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
                         [@appearInOut]="animationState"
                         (click)="scrollTop($event)"
                         [ngStyle]="getStyle()">
-                    <span *ngIf="html" [innerHTML]="html">
+                    <span *ngIf="html" [innerHTML]="html | safeHtml">
                     </span>
                 </button>`,
     styles: [
@@ -165,8 +165,9 @@ export class GoTopButton implements OnInit {
         var timerID = setInterval(() => {
             window.scrollBy(0, -initialSpeed);
             initialSpeed = initialSpeed + this.acceleration;
-            if (this.getCurrentScrollTop() == 0)
+            if (this.getCurrentScrollTop() == 0){
                 clearInterval(timerID);
+            }
         }, 15);
     };
 
