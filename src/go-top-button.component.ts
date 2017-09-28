@@ -3,7 +3,7 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
     selector: 'go-top-button',
-    template: `<button type="button" class="go-top-button"
+    template: `<button type="button" aria-label="go to top of page" class="go-top-button"
                         [@appearInOut]="animationState"
                         (click)="scrollTop($event)"
                         [ngStyle]="getStyle()">
