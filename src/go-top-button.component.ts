@@ -44,7 +44,7 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
  */
 export class GoTopButton implements OnInit {
     animationState: string = 'out';
-
+    private timerID: any = null;
     /**
      * Default button styles
      * @type {{position: string;
@@ -114,7 +114,7 @@ export class GoTopButton implements OnInit {
         this.validateInputs();
     }
 
-    private validateInputs =() => {
+    private validateInputs() {
         var errorMessagePrefix = 'GoTopButton component input validation error: ';
 
         if(this.scrollDistance < 0){
@@ -134,7 +134,7 @@ export class GoTopButton implements OnInit {
      * Listens to window scroll and animates the button
      */
     @HostListener('window:scroll', [])
-    onWindowScroll = () => {
+    onWindowScroll() {
         if(this.isBrowser()){
             this.animationState = this.getCurrentScrollTop() > this.scrollDistance ? 'in' : 'out';
         }
@@ -144,7 +144,7 @@ export class GoTopButton implements OnInit {
      * Scrolls window to top
      * @param event
      */
-    scrollTop = (event: any) => {
+    scrollTop(event: any) {
         if(!this.isBrowser()){
             return;
         }
@@ -160,13 +160,19 @@ export class GoTopButton implements OnInit {
     /**
      * Performs the animated scroll to top
      */
-    animateScrollTop = () => {
+    animateScrollTop() {
+        if(this.timerID !== null) {
+            return;
+        }
+
         var initialSpeed = this.speed;
-        var timerID = setInterval(() => {
+        var that = this;
+        this.timerID = setInterval(() => {
             window.scrollBy(0, -initialSpeed);
-            initialSpeed = initialSpeed + this.acceleration;
-            if (this.getCurrentScrollTop() == 0){
-                clearInterval(timerID);
+            initialSpeed = initialSpeed + that.acceleration;
+            if (that.getCurrentScrollTop() === 0){
+                clearInterval(that.timerID);
+                that.timerID = null;
             }
         }, 15);
     };
@@ -175,20 +181,20 @@ export class GoTopButton implements OnInit {
      * Get current Y scroll position
      * @returns {any|((event:any)=>undefined)}
      */
-    getCurrentScrollTop = () => {
-        if(typeof window.scrollY != 'undefined'){
+    getCurrentScrollTop() {
+        if(typeof window.scrollY !== 'undefined'){
             return window.scrollY;
         }
 
-        if(typeof window.pageYOffset != 'undefined'){
+        if(typeof window.pageYOffset !== 'undefined'){
             return window.pageYOffset;
         }
 
-        if(typeof document.body.scrollTop != 'undefined'){
+        if(typeof document.body.scrollTop !== 'undefined'){
             return document.body.scrollTop;
         }
 
-        if(typeof document.documentElement.scrollTop != 'undefined'){
+        if(typeof document.documentElement.scrollTop !== 'undefined'){
             return document.documentElement.scrollTop;
         }
 
@@ -199,7 +205,7 @@ export class GoTopButton implements OnInit {
      * Get button style
      * @returns {{}&U&V}
      */
-    getStyle = () => {
+    getStyle() {
         return Object.assign({}, this.defaultStyles, this.styles);
     };
 
@@ -208,7 +214,7 @@ export class GoTopButton implements OnInit {
      * while executing the server rendering
      * @returns {boolean}
      */
-    isBrowser = ():boolean => {
+    isBrowser():boolean {
         return typeof (window) !== 'undefined';
     };
 }
