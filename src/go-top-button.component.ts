@@ -47,7 +47,7 @@ export class GoTopButton implements OnInit {
     private timerID: any = null;
     /**
      * Default button styles
-     * @type {{position: string;
+     * position: string;
      * top: string;
      * bottom: string;
      * right: string;
