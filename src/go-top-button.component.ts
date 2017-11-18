@@ -206,7 +206,7 @@ export class GoTopButton implements OnInit {
      * @returns {{}&U&V}
      */
     getStyle() {
-        return Object.assign({}, this.defaultStyles, this.styles);
+        return this.mergeOptions(this.defaultStyles, this.styles);
     };
 
     /**
@@ -217,4 +217,15 @@ export class GoTopButton implements OnInit {
     isBrowser():boolean {
         return typeof (window) !== 'undefined';
     };
+
+    private mergeOptions(obj1, obj2) {
+        var obj3 = {};
+        for (var attrname in obj1) {
+            obj3[attrname] = obj1[attrname];
+        }
+        for (var attrname in obj2) {
+            obj3[attrname] = obj2[attrname];
+        }
+        return obj3;
+    }
 }
