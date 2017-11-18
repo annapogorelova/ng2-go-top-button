@@ -88,10 +88,10 @@ Example of customization:
   </go-top-button>
 ```
 
-# Angular CLI >= 1.5.0 issue
+## Angular CLI >= 1.5.0 issue
 
 Currently the Angular CLI 1.5.0 and higher throws the error saying that "go-top-button.component.ts is not part of the compilation output.".
-To fix this, please add the ng-go-top-button reference to your `include` section of `tsconfig.json`:
+To fix this, please add the ng2-go-top-button reference to your `include` section of `tsconfig.json`:
 
 ```
 "include": [
@@ -100,7 +100,7 @@ To fix this, please add the ng-go-top-button reference to your `include` section
 ]
 ```
 
-# IE-specific issues:
+## IE-specific issues:
 
 IE does not support web animations. If you would like to enable them, install and import the corresponding polyfill to your polyfills.js file:
 
