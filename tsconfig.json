@@ -2,7 +2,6 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "outDir": "./dist",
     "target": "es5",
     "lib": ["es2017", "dom"],
     "moduleResolution": "node",

@@ -28,7 +28,7 @@ System.config({
         ...
        'ng2-go-top-button': {
             defaultExtension: 'js',
-            main: './dist/index.js'
+            main: './index.js'
       }
     }
 ```
@@ -92,7 +92,7 @@ To fix this, please add the ng-go-top-button reference to your `include` section
 ```
 "include": [
     ...,
-    "node_modules/ng2-go-top-button/dist/**/*"
+    "node_modules/ng2-go-top-button/**/*"
 ]
 ```
 
