@@ -14,10 +14,9 @@
     "node_modules"
   ],
 
-  "files": [
-    "index.ts",
-    "./src/go-top-button.component.ts",
-    "./src/go-top-button.module.ts"
+  "include": [
+    "./index.ts",
+    "./src/**/*"
   ],
 
   "angularCompilerOptions": {

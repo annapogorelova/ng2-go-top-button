@@ -167,7 +167,7 @@ export class GoTopButton implements OnInit {
 
         var initialSpeed = this.speed;
         var that = this;
-        this.timerID = setInterval(() => {
+        this.timerID = setInterval(function() {
             window.scrollBy(0, -initialSpeed);
             initialSpeed = initialSpeed + that.acceleration;
             if (that.getCurrentScrollTop() === 0){
