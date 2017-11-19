@@ -96,7 +96,7 @@ To fix this, please add the ng2-go-top-button reference to your `include` sectio
 ```
 "include": [
     ...,
-    "node_modules/ng2-go-top-button/**/*"
+    "node_modules/ng2-go-top-button/src/**/*"
 ]
 ```
 
