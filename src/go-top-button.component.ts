@@ -1,5 +1,5 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
-import {trigger, state, style, transition, animate} from '@angular/animations';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
     selector: 'go-top-button',
@@ -16,7 +16,7 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
             cursor: pointer;
             outline: none;
         }
-        
+
         .go-top-button:hover, .go-top-button:focus {
             background-color: rgba(0, 0, 0, 0.6);
             text-decoration: none;
@@ -182,19 +182,19 @@ export class GoTopButton implements OnInit {
      * @returns {any|((event:any)=>undefined)}
      */
     getCurrentScrollTop() {
-        if(typeof window.scrollY !== 'undefined'){
+        if(typeof window.scrollY !== 'undefined' && window.scrollY >= 0){
             return window.scrollY;
         }
 
-        if(typeof window.pageYOffset !== 'undefined'){
+        if(typeof window.pageYOffset !== 'undefined' && window.pageYOffset >= 0){
             return window.pageYOffset;
         }
 
-        if(typeof document.body.scrollTop !== 'undefined'){
+        if(typeof document.body.scrollTop !== 'undefined' && document.body.scrollTop >= 0){
             return document.body.scrollTop;
         }
 
-        if(typeof document.documentElement.scrollTop !== 'undefined'){
+        if(typeof document.documentElement.scrollTop !== 'undefined' && document.documentElement.scrollTop >= 0){
             return document.documentElement.scrollTop;
         }
 
