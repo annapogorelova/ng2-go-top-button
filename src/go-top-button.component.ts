@@ -89,7 +89,7 @@ export class GoTopButton implements OnInit {
 
     /**
      * User styles config object
-     * @type {{}}
+     * @type {any}
      */
     @Input() styles: any = {};
 
@@ -179,7 +179,7 @@ export class GoTopButton implements OnInit {
 
     /**
      * Get current Y scroll position
-     * @returns {any|((event:any)=>undefined)}
+     * @returns {number}
      */
     getCurrentScrollTop() {
         if(typeof window.scrollY !== 'undefined' && window.scrollY >= 0){
@@ -203,7 +203,7 @@ export class GoTopButton implements OnInit {
 
     /**
      * Get button style
-     * @returns {{}&U&V}
+     * @returns {any}
      */
     getStyle() {
         return this.mergeOptions(this.defaultStyles, this.styles);
