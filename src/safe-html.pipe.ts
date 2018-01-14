@@ -5,7 +5,7 @@ import {Pipe} from '@angular/core';
 export class Safe {
     constructor(private sanitizer:DomSanitizer){}
 
-    transform(style) {
+    transform(style: any) {
         return this.sanitizer.bypassSecurityTrustHtml(style);
     }
 }
