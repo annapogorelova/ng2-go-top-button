@@ -1,12 +1,43 @@
 # ng2-go-top-button
-A simple customizable go-to-top button component for Angular 2 projects
+A simple customizable go-to-top button component for Angular projects
 
-# Installation
+## Versions
+
+For Angular >= "5.0.0" use "^3.0.0", for Angular < "5.0.0" use "^2.0.0" version of this package.
+
+## Installation
 ```
 npm install ng2-go-top-button --save
 ```
 
-# API
+## Configuration
+
+### SystemJS
+
+Register @angular/animations and the package itself in systemjs.config.js as following:
+```
+System.config({
+    paths: {
+      // paths serve as alias
+      'npm:': 'node_modules/'
+    },
+    map: {
+        ...
+      'ng2-go-top-button': 'npm:ng2-go-top-button',
+      '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
+      '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
+      '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
+    },
+    packages: {
+        ...
+       'ng2-go-top-button': {
+            defaultExtension: 'js',
+            main: './index.js'
+      }
+    }
+```
+
+## API
 | Property | Type | Description |
 | ------ | ------ | ------ |
 | scrollDistance | *number* | Number of pixels to be scrolled Y for button to be shown. Defaults to 200px. Must be greater than zero. |
@@ -16,18 +47,20 @@ npm install ng2-go-top-button --save
 | speed | *number* | Speedof animated scroll. Must be greater than 1. 80 by default. |
 | acceleration  | *number* | Number of pixels to speed up when scrolling is animated. Zero by default - this way page will be scrolled top with the constant speed. |
 
-# Usage
+## Usage
 Import statement:
 ```
 import {GoTopButtonModule} from 'ng2-go-top-button';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; // angular 4.x and greater
 ```
-Add it to imports in your module declaration:
+Add it to imports in your module declaration. When using angular 4.x and greater, also import a `BrowserAnimationsModule`:
 ```
 @NgModule({
     ...
-    imports: [..., GoTopButtonModule],
+    imports: [..., GoTopButtonModule, BrowserAnimationsModule],
     ...
 ```
+
 If you need to export it from your module, than also add it to exports:
 ```
 @NgModule({
@@ -48,12 +81,42 @@ Example of customization:
                  [styles]="{
                     'border-radius': '20px 20px 20px 20px',
                     'right': '5px',
-                    'color': 'blue',
+                    'color': 'green',
                     'border': '5px solid',
                     'line-height': '20px'
                  }">
   </go-top-button>
 ```
-Result:
+
+## Angular CLI >= 1.5.0 issue
+
+Currently the Angular CLI 1.5.0 and higher throws the error saying that "go-top-button.component.ts is not part of the compilation output.".
+To fix this, please add the ng2-go-top-button reference to your `include` section of `tsconfig.json`:
+
+```
+"include": [
+    ...,
+    "node_modules/ng2-go-top-button/src/**/*"
+]
+```
+
+## IE-specific issues:
+
+IE does not support web animations. If you would like to enable them, install and import the corresponding polyfill to your polyfills.js file:
+
+In your project's directory:
+```
+npm install --save web-animations-js
+```
+
+In polyfills.js:
+```
+import 'web-animations-js';
+```
+## Result:
 
 ![alt tag](https://gifyu.com/images/ezgif.com-video-to-gifface4.gif)
+
+## Issues & Pull Requests
+
+Feel free to create issues and pull requests. Even though there is a 3.x version of this module for Angular 5, I still support the 2.x version for Angular 4 and lower. Fixes for 2.x version go to the **v2-fixes** branch.

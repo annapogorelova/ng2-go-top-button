@@ -2,8 +2,8 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es6",
-    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es2017", "dom"],
     "moduleResolution": "node",
     "removeComments": true,
     "inlineSourceMap": true,
@@ -14,16 +14,8 @@
     "node_modules"
   ],
 
-  "files": [
-    "index.ts",
-    "./src/go-top-button.component.ts",
-    "./src/go-top-button.module.ts"
-  ],
-
-  "angularCompilerOptions": {
-    "genDir": "compiled",
-    "debug": true,
-    "skipMetadataEmit" : false,
-    "strictMetadataEmit": true
-  }
+  "include": [
+    "./index.ts",
+    "./src/**/*"
+  ]
 }

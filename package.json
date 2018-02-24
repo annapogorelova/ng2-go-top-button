@@ -1,6 +1,6 @@
 {
   "name": "ng2-go-top-button",
-  "version": "2.0.7",
+  "version": "3.0.4",
   "description": "A simle customizable go-to-top button component for Angular 2 projects",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -20,19 +20,25 @@
   },
   "keywords": [
     "angular2",
+    "angular4",
+    "angular5",
+    "ng",
     "go",
     "top",
     "button"
   ],
   "license": "MIT",
+  "peerDependencies": {
+    "@angular/core": "^5.0.0"
+  },
   "dependencies": {
-    "@angular/animations": "^4.0.1",
-    "@angular/common": "^4.0.1",
-    "@angular/core": "^4.0.1",
-    "@angular/platform-browser": "^4.0.1",
+    "@angular/animations": "^5.0.0",
+    "@angular/common": "^5.0.0",
+    "@angular/core": "^5.0.0",
+    "@angular/platform-browser": "^5.0.0",
     "@types/core-js": "^0.9.35",
-    "rxjs": "^5.0.1",
-    "typescript": "^2.2.1",
-    "zone.js": "^0.8.4"
+    "rxjs": "^5.5.2",
+    "typescript": "^2.4.2",
+    "zone.js": "^0.8.18"
   }
 }
