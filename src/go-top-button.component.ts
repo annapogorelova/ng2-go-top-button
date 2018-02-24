@@ -1,5 +1,15 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Component, HostListener, Input, OnInit, Pipe} from '@angular/core';
+import {trigger, state, style, transition, animate} from '@angular/animations';
+import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
+
+@Pipe({name: 'safeHtml'})
+export class SafeHtmlPipe {
+    constructor(private sanitizer:DomSanitizer){}
+
+    transform(style: any) {
+        return this.sanitizer.bypassSecurityTrustHtml(style);
+    }
+}
 
 @Component({
     selector: 'go-top-button',
