@@ -1,12 +1,16 @@
 # ng2-go-top-button
 A simple customizable go-to-top button component for Angular projects
 
-# Installation
+## Versions
+
+For Angular >= "5.0.0" use "^3.0.0", for Angular < "5.0.0" use "^2.0.0" version of this package.
+
+## Installation
 ```
 npm install ng2-go-top-button --save
 ```
 
-# Configuration
+## Configuration
 
 ### SystemJS
 
@@ -33,7 +37,7 @@ System.config({
     }
 ```
 
-# API
+## API
 | Property | Type | Description |
 | ------ | ------ | ------ |
 | scrollDistance | *number* | Number of pixels to be scrolled Y for button to be shown. Defaults to 200px. Must be greater than zero. |
@@ -43,7 +47,7 @@ System.config({
 | speed | *number* | Speedof animated scroll. Must be greater than 1. 80 by default. |
 | acceleration  | *number* | Number of pixels to speed up when scrolling is animated. Zero by default - this way page will be scrolled top with the constant speed. |
 
-# Usage
+## Usage
 Import statement:
 ```
 import {GoTopButtonModule} from 'ng2-go-top-button';
@@ -83,7 +87,8 @@ Example of customization:
                  }">
   </go-top-button>
 ```
-# IE-specific issues:
+
+## IE-specific issues:
 
 IE does not support web animations. If you would like to enable them, install and import the corresponding polyfill to your polyfills.js file:
 
@@ -96,6 +101,10 @@ In polyfills.js:
 ```
 import 'web-animations-js';
 ```
-# Result:
+## Result:
 
 ![alt tag](https://gifyu.com/images/ezgif.com-video-to-gifface4.gif)
+
+## Issues & Pull Requests
+
+Feel free to create issues and pull requests. Even though there is a 3.x version of this module for Angular 5, I still support the 2.x version for Angular 4 and lower. Fixes for 2.x version go to the **v2-fixes** branch.

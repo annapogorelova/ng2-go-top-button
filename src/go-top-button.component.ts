@@ -1,5 +1,15 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Component, HostListener, Input, OnInit, Pipe} from '@angular/core';
+import {trigger, state, style, transition, animate} from '@angular/animations';
+import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
+
+@Pipe({name: 'safeHtml'})
+export class SafeHtmlPipe {
+    constructor(private sanitizer:DomSanitizer){}
+
+    transform(style: any) {
+        return this.sanitizer.bypassSecurityTrustHtml(style);
+    }
+}
 
 @Component({
     selector: 'go-top-button',
@@ -218,12 +228,14 @@ export class GoTopButton implements OnInit {
         return typeof (window) !== 'undefined';
     };
 
-    private mergeOptions(obj1, obj2) {
-        var obj3 = {};
-        for (var attrname in obj1) {
+    private mergeOptions(obj1: { [key: string]: string }, obj2: { [key: string]: string }) {
+        const obj3: { [key: string]: string } = {};
+
+        for (const attrname of Object.keys(obj1)) {
             obj3[attrname] = obj1[attrname];
         }
-        for (var attrname in obj2) {
+
+        for (const attrname of Object.keys(obj2)) {
             obj3[attrname] = obj2[attrname];
         }
         return obj3;

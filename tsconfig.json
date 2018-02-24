@@ -2,27 +2,20 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es6",
-    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es2017", "dom"],
     "moduleResolution": "node",
     "removeComments": true,
     "inlineSourceMap": true,
     "inlineSources": true,
-    "declaration": true
+    "declaration": true,
+    "outDir": "./dist"
   },
   "exclude": [
     "node_modules"
   ],
-
   "include": [
     "./index.ts",
     "./src/**/*"
-  ],
-
-  "angularCompilerOptions": {
-    "genDir": "compiled",
-    "debug": true,
-    "skipMetadataEmit" : false,
-    "strictMetadataEmit": true
-  }
+  ]
 }
