@@ -73,8 +73,7 @@ On your template paste the `<go-top-button></go-top-button>` html. This will add
 
 Example of customization:
 ```
-<go-top-button [html]="'<i class=\'fa fa-arrow-up\'></i>'"
-                 [animate]="true"
+<go-top-button   [animate]="true"
                  [speed]="50"
                  [acceleration]="2"
                  [scrollDistance]="300"
@@ -85,8 +84,15 @@ Example of customization:
                     'border': '5px solid',
                     'line-height': '20px'
                  }">
+        <i class=\'fa fa-arrow-up\'></i>
   </go-top-button>
 ```
+
+##### Note: for the version lower than 4.0.0 of this package you should still use the old syntax of injecting the html:
+```
+<go-top-button [html]="'<i class=\'fa fa-arrow-up\'></i>'" ... ></go-top-button>
+``` 
+The new syntax (injecting via `<ng-content>`) was introduced with v4.0.0 to fix the Angular Material compatibility issues.
 
 ## IE-specific issues:
 

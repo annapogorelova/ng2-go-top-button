@@ -1,10 +1,10 @@
-import {GoTopButton, SafeHtmlPipe} from './go-top-button.component';
+import {GoTopButton} from './go-top-button.component';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 @NgModule({
     imports: [CommonModule],
-    declarations: [GoTopButton, SafeHtmlPipe],
+    declarations: [GoTopButton],
     exports: [GoTopButton]
 })
 
