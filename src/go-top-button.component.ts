@@ -1,15 +1,5 @@
 import {Component, HostListener, Input, OnInit, Pipe} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
-import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
-
-@Pipe({name: 'safeHtml'})
-export class SafeHtmlPipe {
-    constructor(private sanitizer:DomSanitizer){}
-
-    transform(style: any) {
-        return this.sanitizer.bypassSecurityTrustHtml(style);
-    }
-}
 
 @Component({
     selector: 'go-top-button',
@@ -17,8 +7,7 @@ export class SafeHtmlPipe {
                         [@appearInOut]="animationState"
                         (click)="scrollTop($event)"
                         [ngStyle]="getStyle()">
-                    <span *ngIf="html" [innerHTML]="html | safeHtml">
-                    </span>
+                        <ng-content></ng-content>
                 </button>`,
     styles: [
         `.go-top-button {
@@ -90,12 +79,6 @@ export class GoTopButton implements OnInit {
      * @type {number}
      */
     @Input() scrollDistance: number = 200;
-
-    /**
-     * Button inner html
-     * @type {string}
-     */
-    @Input() html: string = '';
 
     /**
      * User styles config object
