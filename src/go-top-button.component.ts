@@ -1,4 +1,4 @@
-import {Component, HostListener, Input, OnInit, Pipe} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
@@ -76,19 +76,16 @@ export class GoTopButton implements OnInit {
 
     /**
      * Go top button will appear when user scrolls Y to this position
-     * @type {number}
      */
     @Input() scrollDistance: number = 200;
 
     /**
      * User styles config object
-     * @type {any}
      */
     @Input() styles: any = {};
 
     /**
      * If true scrolling to top will be animated
-     * @type {boolean}
      */
     @Input() animate: boolean = false;
 
@@ -99,7 +96,6 @@ export class GoTopButton implements OnInit {
 
     /**
      * Acceleration coefficient, added to speed when using animated scroll
-     * @type {number}
      */
     @Input() acceleration: number = 0;
 
@@ -172,7 +168,6 @@ export class GoTopButton implements OnInit {
 
     /**
      * Get current Y scroll position
-     * @returns {number}
      */
     getCurrentScrollTop() {
         if(typeof window.scrollY !== 'undefined' && window.scrollY >= 0){
@@ -196,7 +191,6 @@ export class GoTopButton implements OnInit {
 
     /**
      * Get button style
-     * @returns {any}
      */
     getStyle() {
         return this.mergeOptions(this.defaultStyles, this.styles);
@@ -205,7 +199,6 @@ export class GoTopButton implements OnInit {
     /**
      * This check will prevent 'window' logic to be executed
      * while executing the server rendering
-     * @returns {boolean}
      */
     isBrowser():boolean {
         return typeof (window) !== 'undefined';
