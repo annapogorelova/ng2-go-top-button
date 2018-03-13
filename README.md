@@ -3,7 +3,7 @@ A simple customizable go-to-top button component for Angular projects
 
 ## Versions
 
-For Angular >= "5.0.0" use "^3.0.0", for Angular < "5.0.0" use "^2.0.0" version of this package.
+For Angular >= "5.0.0" use ">=3.0.0", for Angular < "5.0.0" use "^2.0.0" version of this package.
 
 ## Installation
 ```
