@@ -10,7 +10,7 @@
     "clean-modules": "rm -rf node_modules",
     "clean": "npm run clean-dist && npm run clean-modules",
     "build": "npm i && npm run clean-dist && ngc -p tsconfig-build.json",
-    "prepublish": "npm run build"
+    "prepublish": "tsc"
   },
   "contributors": [
     {
