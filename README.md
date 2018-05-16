@@ -77,6 +77,7 @@ Example of customization:
                  [speed]="50"
                  [acceleration]="2"
                  [scrollDistance]="300"
+                 [classNames]="'custom-class-name'"
                  [styles]="{
                     'border-radius': '20px 20px 20px 20px',
                     'right': '5px',
@@ -87,12 +88,25 @@ Example of customization:
         <i class=\'fa fa-arrow-up\'></i>
   </go-top-button>
 ```
-
-##### Note: for the version lower than 4.0.0 of this package you should still use the old syntax of injecting the html:
+##### Note 1: 
+For the version lower than 4.0.0 of this package you should still use the old syntax of injecting the html:
 ```
 <go-top-button [html]="'<i class=\'fa fa-arrow-up\'></i>'" ... ></go-top-button>
 ``` 
 The new syntax (injecting via `<ng-content>`) was introduced with v4.0.0 to fix the Angular Material compatibility issues.
+
+##### Note 2:
+In the version 4.2.0 `classNames` attribute has been added. Now you can define your custom CSS classes in your parent component and apply them to your go top button.
+In order to achieve this you need to change the CSS `encapsulation` level of your parent component to either `None` or `Native`:
+```$xslt
+    import { Component, ViewEncapsulation } from '@angular/core';
+    
+    @Component({
+        ...,
+        encapsulation: ViewEncapsulation.None, // ViewEncapsulation.Native may also work
+    })
+```
+This will let your parent component affect the CSS of the `go-top-button` child.
 
 ## IE-specific issues:
 
