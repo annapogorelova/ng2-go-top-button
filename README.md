@@ -108,6 +108,8 @@ In order to achieve this you need to change the CSS `encapsulation` level of you
 ```
 This will let your parent component affect the CSS of the `go-top-button` child.
 
+The default styles now will not be merged with the input `styles` values - they have been moved to the default CSS class `.go-top-button`. So if you override this class with your custom `className` value, you have to write all CSS yourself with no default styling.
+
 ## IE-specific issues:
 
 IE does not support web animations. If you would like to enable them, install and import the corresponding polyfill to your polyfills.js file:
