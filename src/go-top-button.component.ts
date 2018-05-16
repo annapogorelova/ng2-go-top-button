@@ -1,19 +1,32 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
     selector: 'go-top-button',
-    template: `<button type="button" aria-label="go to top of page" class="go-top-button"
+    template: `<button type="button" aria-label="go to top of page"
                         [@appearInOut]="animationState"
                         (click)="scrollTop($event)"
-                        [ngStyle]="getStyle()">
+                        [ngStyle]="getStyle()"
+                        [ngClass]="classNames">
                         <ng-content></ng-content>
                 </button>`,
+    encapsulation: ViewEncapsulation.None,
     styles: [
         `.go-top-button {
             position: fixed;
             cursor: pointer;
             outline: none;
+            top: 50%;
+            bottom: 50%;
+            right: 0;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-decoration: none;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.3);
+            border: none;
+            border-radius: 3px 0 0 3px;
         }
 
         .go-top-button:hover, .go-top-button:focus {
@@ -44,35 +57,6 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
 export class GoTopButton implements OnInit {
     animationState: string = 'out';
     private timerID: any = null;
-    /**
-     * Default button styles
-     * position: string;
-     * top: string;
-     * bottom: string;
-     * right: string;
-     * width: string;
-     * height: string;
-     * line-height: string;
-     * text-decoration: string;
-     * color: string;
-     * background: string;
-     * border: string;
-     * border-radius: string}}
-     */
-    private defaultStyles: any = {
-        'position': 'fixed',
-        'top': '50%',
-        'bottom': '50%',
-        'right': '0',
-        'width': '35px',
-        'height': '35px',
-        'line-height': '35px',
-        'text-decoration': 'none',
-        'color': 'white',
-        'background': 'rgba(0, 0, 0, 0.3)',
-        'border': 'none',
-        'border-radius': '3px 0 0 3px'
-    };
 
     /**
      * Go top button will appear when user scrolls Y to this position
@@ -83,6 +67,12 @@ export class GoTopButton implements OnInit {
      * User styles config object
      */
     @Input() styles: any = {};
+
+    /**
+     * Class names to be applied to the button
+     * @type {string}
+     */
+    @Input() classNames: string = "go-top-button";
 
     /**
      * If true scrolling to top will be animated
@@ -104,7 +94,7 @@ export class GoTopButton implements OnInit {
     }
 
     private validateInputs() {
-        var errorMessagePrefix = 'GoTopButton component input validation error: ';
+        const errorMessagePrefix = 'GoTopButton component input validation error: ';
 
         if(this.scrollDistance < 0){
             throw Error(errorMessagePrefix + "'scrollDistance' parameter must be greater or equal to 0");
@@ -116,6 +106,10 @@ export class GoTopButton implements OnInit {
 
         if(this.acceleration < 0){
             throw Error(errorMessagePrefix + "'acceleration' parameter must be greater or equal to 0");
+        }
+
+        if(typeof this.classNames !== "string") {
+            throw Error(errorMessagePrefix + "'classNames' parameter must be a string like 'class1 class2 class3'");
         }
     };
 
@@ -154,8 +148,9 @@ export class GoTopButton implements OnInit {
             return;
         }
 
-        var initialSpeed = this.speed;
-        var that = this;
+        let initialSpeed = this.speed;
+        const that = this;
+
         this.timerID = setInterval(function() {
             window.scrollBy(0, -initialSpeed);
             initialSpeed = initialSpeed + that.acceleration;
@@ -193,7 +188,7 @@ export class GoTopButton implements OnInit {
      * Get button style
      */
     getStyle() {
-        return this.mergeOptions(this.defaultStyles, this.styles);
+        return this.styles || {};
     };
 
     /**
@@ -203,17 +198,4 @@ export class GoTopButton implements OnInit {
     isBrowser():boolean {
         return typeof (window) !== 'undefined';
     };
-
-    private mergeOptions(obj1: { [key: string]: string }, obj2: { [key: string]: string }) {
-        const obj3: { [key: string]: string } = {};
-
-        for (const attrname of Object.keys(obj1)) {
-            obj3[attrname] = obj1[attrname];
-        }
-
-        for (const attrname of Object.keys(obj2)) {
-            obj3[attrname] = obj2[attrname];
-        }
-        return obj3;
-    }
 }
