@@ -1,6 +1,6 @@
 {
   "name": "ng2-go-top-button",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "A simle customizable go-to-top button component for Angular 2+ projects",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
