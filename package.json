@@ -1,6 +1,6 @@
 {
   "name": "ng2-go-top-button",
-  "version": "4.2.1",
+  "version": "5.0.0-alpha.1",
   "description": "A simle customizable go-to-top button component for Angular 2+ projects",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
@@ -36,21 +36,25 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/core": "^5.0.0",
-    "@angular/common": "^5.0.0"
-  },
-  "dependencies": {
-    "@angular/animations": "^5.2.11",
-    "@angular/common": "^5.2.11",
-    "@angular/core": "^5.2.11",
-    "@angular/platform-browser": "^5.2.11",
-    "@types/core-js": "^0.9.35",
-    "rxjs": "^5.5.11",
-    "typescript": "^2.9.1",
-    "zone.js": "^0.8.26"
+    "@angular/animations": "^6.x",
+    "@angular/common": "^6.x",
+    "@angular/core": "^6.x",
+    "@angular/platform-browser": "^6.x",
+    "@types/core-js": "^0.9.x",
+    "rxjs": "^6.x",
+    "typescript": "^2.x",
+    "zone.js": "^0.8.x"
   },
   "devDependencies": {
+    "@angular/animations": "^6.0.4",
+    "@angular/common": "^6.0.4",
     "@angular/compiler": "^5.2.11",
-    "@angular/compiler-cli": "^5.2.11"
+    "@angular/compiler-cli": "^5.2.11",
+    "@angular/core": "^6.0.4",
+    "@angular/platform-browser": "^6.0.4",
+    "@types/core-js": "^2.5.0",
+    "rxjs": "^6.2.0",
+    "typescript": "^2.9.1",
+    "zone.js": "^0.8.26"
   }
 }
