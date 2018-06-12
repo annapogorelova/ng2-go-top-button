@@ -78,7 +78,7 @@ Example of customization:
                  [speed]="50"
                  [acceleration]="2"
                  [scrollDistance]="300"
-                 [classNames]="'custom-class-name'"
+                 [classNames]="'custom-class'"
                  [styles]="{
                     'border-radius': '20px 20px 20px 20px',
                     'right': '5px',
@@ -89,6 +89,17 @@ Example of customization:
         <i class=\'fa fa-arrow-up\'></i>
   </go-top-button>
 ```
+Custom CSS class declaration (if needed):
+```$xslt
+.custom-class {
+    position: fixed;
+    background-color: pink;
+    border-color: green;
+    height: 30px;
+    width: 30px;
+}
+```
+
 ##### Note 1: 
 For the version lower than 4.0.0 of this package you should still use the old syntax of injecting the html:
 ```
