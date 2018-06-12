@@ -7,7 +7,7 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
                         [@appearInOut]="animationState"
                         (click)="scrollTop($event)"
                         [ngStyle]="getStyle()"
-                        [ngClass]="classNames">
+                        [ngClass]="classList">
                         <ng-content></ng-content>
                 </button>`,
     encapsulation: ViewEncapsulation.None,
@@ -69,10 +69,10 @@ export class GoTopButton implements OnInit {
     @Input() styles: any = {};
 
     /**
-     * Class names to be applied to the button
+     * Classes to be applied to the button
      * @type {string}
      */
-    @Input() classNames: string = "go-top-button";
+    @Input() classList: string = "go-top-button";
 
     /**
      * If true scrolling to top will be animated
@@ -108,8 +108,8 @@ export class GoTopButton implements OnInit {
             throw Error(errorMessagePrefix + "'acceleration' parameter must be greater or equal to 0");
         }
 
-        if(typeof this.classNames !== "string") {
-            throw Error(errorMessagePrefix + "'classNames' parameter must be a string like 'class1 class2 class3'");
+        if(typeof this.classList !== "string") {
+            throw Error(errorMessagePrefix + "'classList' parameter must be a string like 'class1 class2 class3'");
         }
     };
 
