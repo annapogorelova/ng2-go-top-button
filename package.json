@@ -40,17 +40,17 @@
     "@angular/common": "^5.0.0"
   },
   "dependencies": {
-    "@angular/animations": "^5.0.0",
-    "@angular/common": "^5.0.0",
-    "@angular/core": "^5.0.0",
-    "@angular/platform-browser": "^5.0.0",
+    "@angular/animations": "^5.2.11",
+    "@angular/common": "^5.2.11",
+    "@angular/core": "^5.2.11",
+    "@angular/platform-browser": "^5.2.11",
     "@types/core-js": "^0.9.35",
-    "rxjs": "^5.5.2",
-    "typescript": "^2.4.2",
-    "zone.js": "^0.8.18"
+    "rxjs": "^5.5.11",
+    "typescript": "^2.9.1",
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular/compiler": "^5.2.8",
-    "@angular/compiler-cli": "^5.2.8"
+    "@angular/compiler": "^5.2.11",
+    "@angular/compiler-cli": "^5.2.11"
   }
 }
