@@ -43,6 +43,7 @@ System.config({
 | scrollDistance | *number* | Number of pixels to be scrolled Y for button to be shown. Defaults to 200px. Must be greater than zero. |
 | html | *string* | [Deprecated since v4.0.0] Inner html of button element. Could be an icon or text. Empty by default. |
 | styles | *object* | User-defined styles config for the button. |
+| classNames | *string* | Custom class names in the following format 'class1 class2 class3'. |
 | animate | *boolean* | If true, scrolling will be animated. False by default. |
 | speed | *number* | Speedof animated scroll. Must be greater than 1. 80 by default. |
 | acceleration  | *number* | Number of pixels to speed up when scrolling is animated. Zero by default - this way page will be scrolled top with the constant speed. |
