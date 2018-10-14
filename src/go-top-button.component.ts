@@ -16,7 +16,6 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
             position: fixed;
             cursor: pointer;
             outline: none;
-            top: 50%;
             bottom: 50%;
             right: 0;
             width: 35px;
