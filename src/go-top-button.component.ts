@@ -38,11 +38,9 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
     animations: [
         trigger('appearInOut', [
             state('in', style({
-                'display': 'block',
                 'opacity': '0.85'
             })),
             state('out', style({
-                'display': 'none',
                 'opacity': '0'
             })),
             transition('in => out', animate('400ms ease-in-out')),
