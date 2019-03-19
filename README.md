@@ -136,9 +136,9 @@ In polyfills.js:
 ```
 import 'web-animations-js';
 ```
-## Result:
+## Example project
 
-![alt tag](https://gifyu.com/images/ezgif.com-video-to-gifface4.gif)
+You can find example project that uses `ng2-go-top-button` in `example-app/` directory of this repository. Navigate to this directory and run `npm run start`, the app will be hosted on `http://localhost:4200` (is this port is not taken by any other apps on your host). 
 
 ## Issues & Pull Requests
 

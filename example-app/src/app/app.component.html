@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+  <div class="display: block" *ngFor="let imgSrc of imageSources">
+    <img [src]="imgSrc">
+  </div>
+
+  <go-top-button   [animate]="true"
+                   [tabIndex]="10"
+                   [speed]="50"
+                   [acceleration]="2"
+                   [scrollDistance]="100"
+                   [styles]="{
+                    'border-radius': '20px 20px 20px 20px',
+                    'right': '5px',
+                    'color': 'green',
+                    'border': '5px solid',
+                    'line-height': '20px'
+                 }">
+    Up
+    <!--<i class=\'fa fa-arrow-up\'></i>-->
+  </go-top-button>
+</div>
+
+

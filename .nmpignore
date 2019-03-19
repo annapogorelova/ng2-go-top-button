@@ -7,4 +7,5 @@ Thumbs.db
 # Ignored files
 *.ts
 !*.d.ts
-src
+src/
+example-app/
