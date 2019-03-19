@@ -46,7 +46,8 @@ System.config({
 | classNames | *string* | Custom class names in the following format 'class1 class2 class3'. |
 | animate | *boolean* | If true, scrolling will be animated. False by default. |
 | speed | *number* | Speedof animated scroll. Must be greater than 1. 80 by default. |
-| acceleration  | *number* | Number of pixels to speed up when scrolling is animated. Zero by default - this way page will be scrolled top with the constant speed. |
+| acceleration  | *number* | Number of pixels to speed up when scrolling is animated. 0 by default - this way page will be scrolled top with the constant speed. |
+| tabIndex  | *number*  |   Custom tabindex button attribute value, by default 0.
 
 ## Usage
 Import statement:

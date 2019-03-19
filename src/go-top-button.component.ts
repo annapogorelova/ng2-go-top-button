@@ -4,6 +4,7 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
 @Component({
     selector: 'go-top-button',
     template: `<button type="button" aria-label="go to top of page"
+                        [tabIndex]="tabIndex"
                         [@appearInOut]="animationState"
                         (click)="scrollTop($event)"
                         [ngStyle]="getStyle()"
@@ -85,6 +86,11 @@ export class GoTopButton implements OnInit {
      * Acceleration coefficient, added to speed when using animated scroll
      */
     @Input() acceleration: number = 0;
+
+    /**
+     * Button tabIndex HTML attribute
+     */
+    @Input() tabIndex: number = 0;
 
     ngOnInit(){
         this.validateInputs();
