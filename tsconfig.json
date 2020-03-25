@@ -1,22 +1,34 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "emitDecoratorMetadata": true,
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "target": "es5",
-    "module": "es2015",
-    "lib": ["es2017", "dom"],
+    "module": "esnext",
     "moduleResolution": "node",
-    "removeComments": true,
-    "inlineSourceMap": true,
-    "inlineSources": true,
-    "declaration": true,
-    "outDir": "./dist"
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "ng2-go-top-button": [
+        "dist/ng2-go-top-button"
+      ],
+      "ng2-go-top-button/*": [
+        "dist/ng2-go-top-button/*"
+      ]
+    }
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "./index.ts",
-    "./src/**/*"
-  ]
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
 }

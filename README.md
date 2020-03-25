@@ -144,3 +144,5 @@ You can find example project that uses `ng2-go-top-button` in `example-app/` dir
 ## Issues & Pull Requests
 
 Feel free to create issues and pull requests. Even though there is a 3.x version of this module for Angular 5, I still support the 2.x version for Angular 4 and lower. Fixes for 2.x version go to the **v2-fixes** branch.
+
+See the [developer](DEVELOPER.md) documentation.
