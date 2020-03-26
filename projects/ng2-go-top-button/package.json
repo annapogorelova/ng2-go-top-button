@@ -1,6 +1,6 @@
 {
   "name": "ng2-go-top-button",
-  "version": "8.0.1",
+  "version": "9.0.0",
   "description": "A simle customizable go-to-top button component for Angular 2+ projects",
   "author": "Anna Pohorielova <anya.pogorelova@gmail.com>",
   "contributors": [
@@ -22,8 +22,8 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/animations": ">=8.0.0",
-    "@angular/common": ">=8.0.0",
-    "@angular/core": ">=8.0.0"
+    "@angular/animations": ">=9.0.0",
+    "@angular/common": ">=9.0.0",
+    "@angular/core": ">=9.0.0"
   }
 }

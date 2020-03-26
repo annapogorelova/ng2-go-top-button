@@ -2,13 +2,7 @@
 
 ## Install dependencies
 
-Run `npm ci` or 
-
-    npx npm-force-resolutions
-    npm install
-
-There is currently an issue with a version of Babel that prevents the example application from building.
-It is fixed thanks to the `npm-force-resolutions` tools and the `resolutions` configuration in the `package.json` file.
+Run `npm ci` or `npm install`.
 
 ## Lint
 
@@ -18,7 +12,7 @@ Run `npx ng lint`
 
 Build the library
 
-    npx ng build ng2-go-top-button
+    npx ng build ng2-go-top-button --prod
     
 Build the example app (build the library first)
 
@@ -38,6 +32,6 @@ Then open http://localhost:4200/
 
 Build the library then, go to the `dist` directory and publish it.
 
-    npx ng build ng2-go-top-button
+    npx ng build ng2-go-top-button --prod
     cd dist/ng2-go-top-button
     npm publish

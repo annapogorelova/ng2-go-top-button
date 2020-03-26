@@ -14,6 +14,11 @@
           "options": {
             "tsConfig": "projects/ng2-go-top-button/tsconfig.lib.json",
             "project": "projects/ng2-go-top-button/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng2-go-top-button/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -57,7 +62,7 @@
             "main": "projects/example-app/src/main.ts",
             "polyfills": "projects/example-app/src/polyfills.ts",
             "tsConfig": "projects/example-app/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/example-app/src/favicon.ico",
               "projects/example-app/src/assets"
@@ -80,7 +85,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
