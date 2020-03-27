@@ -6,12 +6,12 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'example-app';
-  imageSources = [];
+  title = 'go to top button example app';
+  values = [];
 
   constructor() {
-    for (let i = 0; i < 100; i++) {
-      this.imageSources.push('http://placehold.it/200x200');
+    for (let i = 1; i <= 10; i++) {
+      this.values.push(i);
     }
   }
 }

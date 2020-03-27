@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+.custom-class {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-color: pink;
+  border-width: 5px;
+  color: green;
+  line-height: 20px;
+}
