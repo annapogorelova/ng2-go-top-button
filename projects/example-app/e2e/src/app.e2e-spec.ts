@@ -1,16 +1,21 @@
-import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import {AppPage} from './app.po';
+import {browser, logging} from 'protractor';
 
-describe('workspace-project App', () => {
+describe('Example application', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should scroll', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('example-app app is running!');
+    expect(page.countPictures()).toEqual(10);
+    expect(page.isGoToTopButtonDisplayed()).toEqual(false);
+    page.scrollDown();
+    expect(page.isGoToTopButtonDisplayed()).toEqual(true);
+    page.goToTop();
+    expect(page.isGoToTopButtonDisplayed()).toEqual(false);
   });
 
   afterEach(async () => {

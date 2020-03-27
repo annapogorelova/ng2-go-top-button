@@ -32,3 +32,4 @@ jobs:
           npx ng lint
           npx ng build ng2-go-top-button --prod
           npx ng build example-app --prod
+          npx ng e2e example-app

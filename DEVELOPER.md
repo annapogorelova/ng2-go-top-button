@@ -28,6 +28,10 @@ Then serve the example app
     
 Then open http://localhost:4200/
 
+## Run tests
+
+    npx ng e2e example-app
+
 ## Publish the library
 
 Build the library then, go to the `dist` directory and publish it.
