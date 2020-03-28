@@ -3,7 +3,13 @@ A simple customizable go-to-top button component for Angular projects
 
 ## Versions
 
-For Angular >= "5.0.0" use ">=3.0.0", for Angular < "5.0.0" use "^2.0.0" version of this package.
+| Angular version | ng2-go-top-button version |
+| --- | --- |
+| ^9.0.0 | ^9.0.0 |
+| ^8.0.0 | ^8.0.0 |
+| ^7.0.0 | ^7.0.0 |
+| ^6.0.0 | ^6.0.0 |
+| ^5.0.0 | ^2.0.0 |
 
 ## Installation
 ```
@@ -13,6 +19,8 @@ npm install ng2-go-top-button --save
 ## Configuration
 
 ### SystemJS
+
+If you do not use Angular CLI.
 
 Register @angular/animations and the package itself in systemjs.config.js as following:
 ```
@@ -139,7 +147,8 @@ import 'web-animations-js';
 
 ## Example project
 
-You can find example project that uses `ng2-go-top-button` in `example-app/` directory of this repository. Navigate to this directory and run `npm run start`, the app will be hosted on `http://localhost:4200` (is this port is not taken by any other apps on your host). 
+You can find example project that uses `ng2-go-top-button` in the `projects/example-app/` directory of this repository.
+Run `npx ng serve example-app`, the app will be hosted on `http://localhost:4200` (is this port is not taken by any other apps on your host, otherwise add `--port 5000` for instance to change port). 
 
 ## Issues & Pull Requests
 
