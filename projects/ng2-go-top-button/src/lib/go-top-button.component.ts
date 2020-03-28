@@ -55,8 +55,8 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
  * Component for adding a go-to-top button to scrollable browser content
  */
 export class GoTopButtonComponent implements OnInit {
-  animationState = 'out';
-  private timerID: any = null;
+  animationState: 'in' | 'out' = 'out';
+  private timerID: number | null = null;
 
   /**
    * Go top button will appear when user scrolls Y to this position
@@ -66,7 +66,7 @@ export class GoTopButtonComponent implements OnInit {
   /**
    * User styles config object
    */
-  @Input() styles: any = {};
+  @Input() styles: { [name: string]: string } = {};
 
   /**
    * Classes to be applied to the button
@@ -130,7 +130,7 @@ export class GoTopButtonComponent implements OnInit {
   /**
    * Scrolls window to top
    */
-  scrollTop(event: any) {
+  scrollTop(event: Event) {
     if (!this.isBrowser()) {
       return;
     }
@@ -152,14 +152,12 @@ export class GoTopButtonComponent implements OnInit {
     }
 
     let initialSpeed = this.speed;
-    const that = this;
-
     this.timerID = setInterval(() => {
       window.scrollBy(0, -initialSpeed);
-      initialSpeed = initialSpeed + that.acceleration;
-      if (that.getCurrentScrollTop() === 0) {
-        clearInterval(that.timerID);
-        that.timerID = null;
+      initialSpeed = initialSpeed + this.acceleration;
+      if (this.getCurrentScrollTop() === 0) {
+        clearInterval(this.timerID);
+        this.timerID = null;
       }
     }, 15);
   }
