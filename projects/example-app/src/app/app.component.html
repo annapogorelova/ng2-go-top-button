@@ -3,6 +3,11 @@
     Welcome to {{ title }}!
   </h1>
 
+  <button (click)="toggleUseCustomStyles()">
+    <ng-container *ngIf="useCustomStyles">Use default styles</ng-container>
+    <ng-container *ngIf="!useCustomStyles">Use custom styles</ng-container>
+  </button>
+
   <div *ngFor="let value of values">
     <div class="picture">
       Image {{value}}
@@ -14,8 +19,8 @@
                  [speed]="50"
                  [acceleration]="2"
                  [scrollDistance]="100"
-                 [classNames]="'custom-class'"
-                 [styles]="{color: 'green'}">
+                 [classNames]="useCustomStyles ? 'custom-class' : 'go-top-button'"
+                 [styles]="{color: '#222'}">
     Up
   </go-top-button>
 </div>

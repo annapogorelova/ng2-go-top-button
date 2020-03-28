@@ -8,10 +8,15 @@ import {Component} from '@angular/core';
 export class AppComponent {
   title = 'go to top button example app';
   values = [];
+  useCustomStyles = false;
 
   constructor() {
     for (let i = 1; i <= 10; i++) {
       this.values.push(i);
     }
+  }
+
+  toggleUseCustomStyles() {
+    this.useCustomStyles = !this.useCustomStyles;
   }
 }
