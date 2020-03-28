@@ -66,7 +66,7 @@ export class GoTopButtonComponent implements OnInit {
   /**
    * User styles config object
    */
-  @Input() styles: { [name: string]: string } = {};
+  @Input() styles: { [name: string]: any } = {};
 
   /**
    * Classes to be applied to the button
