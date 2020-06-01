@@ -1,6 +1,6 @@
 {
   "name": "ng2-go-top-button",
-  "version": "8.0.2",
+  "version": "8.0.3",
   "description": "A simple customizable go-to-top button component for Angular 2+ projects",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
@@ -36,9 +36,7 @@
     "@angular/animations": "^8.0",
     "@angular/common": "^8.0",
     "@angular/core": "^8.0",
-    "@angular/platform-browser": "^8.0",
-    "rxjs": "^6.0",
-    "zone.js": "^0.9.0"
+    "@angular/platform-browser": "^8.0"
   },
   "devDependencies": {
     "@angular/animations": "^8.0.3",
