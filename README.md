@@ -1,7 +1,7 @@
 # ng2-go-top-button
 A simple customizable go-to-top button component for Angular projects
 
-**NOTE:** For Angular >= 9 refer to the new NPM package https://www.npmjs.com/ng-go-top-button
+**NOTE:** For Angular >= 9 refer to the new NPM package https://www.npmjs.com/ng-go-top-button, new versions of Angular will not be supported in this repository any more.
 
 ## Versions
 
