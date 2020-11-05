@@ -4,25 +4,59 @@
     Welcome to {{ title }}!
   </h1>
 
+  <h4>Go top button styling:</h4>
+  <div>
+    <label>
+      <input type="radio" value="none" [(ngModel)]="stylingMode">
+      <span>Default styles</span>
+    </label>
+    <label>
+      <input type="radio" value="individual" [(ngModel)]="stylingMode">
+      <span>Individual styles</span>
+    </label>
+    <label>
+      <input type="radio" value="customClass" [(ngModel)]="stylingMode">
+      <span>Custom CSS class</span>
+    </label>
+  </div>
+
+  <p *ngIf="stylingMode === 'individual'">Custom styles: {{JSON.stringify(customStyles)}}</p>
+
+  <div style="display: block; margin-top: 20px" *ngFor="let imgSrc of imageSources">
+    <img [src]="imgSrc">
+  </div>
+
+  <go-top-button *ngIf="stylingMode === 'none'"
+                    [animate]="true"
+                    [tabIndex]="10"
+                    [speed]="50"
+                    [acceleration]="2"
+                    [scrollDistance]="100">
+    Up
+  </go-top-button>
+  <go-top-button *ngIf="stylingMode === 'individual'"
+                    [animate]="true"
+                    [tabIndex]="10"
+                    [speed]="50"
+                    [acceleration]="2"
+                    [scrollDistance]="100"
+                    [styles]="customStyles">
+    Up
+  </go-top-button>
+  <go-top-button *ngIf="stylingMode === 'customClass'"
+                    [animate]="true"
+                    [tabIndex]="10"
+                    [speed]="50"
+                    [acceleration]="2"
+                    [scrollDistance]="100"
+                    [classNames]="customClassNames">
+    Up
+  </go-top-button>
+
   <div class="display: block" *ngFor="let imgSrc of imageSources">
     <img [src]="imgSrc">
   </div>
 
-  <go-top-button   [animate]="true"
-                   [tabIndex]="10"
-                   [speed]="50"
-                   [acceleration]="2"
-                   [scrollDistance]="100"
-                   [styles]="{
-                    'border-radius': '20px 20px 20px 20px',
-                    'right': '5px',
-                    'color': 'green',
-                    'border': '5px solid',
-                    'line-height': '20px'
-                 }">
-    Up
-    <!--<i class=\'fa fa-arrow-up\'></i>-->
-  </go-top-button>
 </div>
 
 
