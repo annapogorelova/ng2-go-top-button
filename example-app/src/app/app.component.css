@@ -1,7 +1,26 @@
-.custom-class {
+.custom-go-top-button {
   position: fixed;
-  background-color: pink;
-  border-color: green;
-  height: 30px;
-  width: 30px;
+  cursor: pointer;
+  outline: none;
+  top: 50%;
+  bottom: 50%;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 35px;
+  text-decoration: none;
+  color: black;
+  background: dodgerblue;
+  border: 5px;
+  border-radius: 20px;
+}
+
+.custom-go-top-button:hover, .custom-go-top-button:focus {
+  background-color: midnightblue;
+  text-decoration: none;
+  color: white;
+}
+
+label {
+  display: block;
 }
